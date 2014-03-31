@@ -9,6 +9,11 @@ module SmsSpec
       @@messages << message
     end
 
+    def self.remove_message message
+      @@messages ||= []
+      @@messages.delete(message)
+    end
+
     def self.clear_messages
       @@messages = []
       @@current_text_message = nil

@@ -7,6 +7,7 @@ module SmsSpec
     def_delegators :"SmsSpec::Data", 
       :messages,
       :add_message,
+      :remove_message,
       :set_current_number,
       :current_number,
       :clear_messages,

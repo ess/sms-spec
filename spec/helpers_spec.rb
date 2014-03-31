@@ -48,6 +48,18 @@ describe SmsSpec::Helpers do
     end
   end
 
+  describe '.remove_message' do
+    it 'removes the given message' do
+      add_message SmsSpec::Message.new :number => "5555555512", :body => "Hello there"
+      add_message SmsSpec::Message.new :number => "5555555512", :body => "Hello there"
+      add_message SmsSpec::Message.new :number => "5555555512", :body => "Hello there"
+
+      messages.should have(3).messages
+      remove_message(messages.first)
+      messages.should have(2).messages
+    end
+  end
+
   describe ".current_text_message" do
     describe "when there are not text messages yet" do
     before :each do
